@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>شاحن Anker 20W Type-C — الأسرع في الجزائر</title>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --blue:    #2563eb;
+      --blue-dk: #1d4ed8;
+      --red:     #ef4444;
+      --white:   #ffffff;
+      --g50:     #f9fafb;
+      --g100:    #f3f4f6;
+      --g300:    #d1d5db;
+      --g500:    #6b7280;
+      --g700:    #374151;
+      --g900:    #111827;
+      --shadow:  0 4px 24px rgba(0,0,0,.09);
+      --r:       16px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+      background: #eef2ff;
+      color: var(--g900);
+      min-height: 100vh;
+    }
+
+    /* HEADER */
+    .header {
+      background: var(--white);
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 1px 4px rgba(0,0,0,.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .brand { font-size: 1.2rem; font-weight: 800; letter-spacing: -.4px; }
+    .brand em { color: var(--blue); font-style: normal; }
+
+    .wrap { max-width: 480px; margin: 0 auto; }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(160deg, #0f172a 0%, #1e3a5f 55%, #1a237e 100%);
+      padding: 30px 20px 26px;
+      text-align: center;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(37,99,235,.2);
+      border: 1px solid rgba(37,99,235,.4);
+      color: #93c5fd;
+      padding: 5px 14px;
+      border-radius: 50px;
+      font-size: .78rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .hero h1 { color: var(--white); font-size: 1.9rem; font-weight: 800; line-height: 1.2; margin-bottom: 6px; }
+    .hero p  { color: #94a3b8; font-size: .88rem; margin-bottom: 24px; }
+
+    /* SLIDER */
+    .slider-wrap {
+      position: relative;
+      width: calc(100% - 28px);
+      max-width: 420px;
+      margin: 0 auto;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(0,0,0,.5);
+    }
+    .slider-track {
+      display: flex;
+      direction: ltr;
+      transition: transform .5s cubic-bezier(.25,.46,.45,.94);
+    }
+    .slide {
+      min-width: 100%;
+      height: 340px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .slide-1 { background: #f0f4ff; }
+    .slide-2 { background: #f8fafc; }
+    .slide-3 { background: #f1f5f9; }
+    .slide img {
+      width: 100%; height: 100%;
+      object-fit: contain;
+      padding: 14px;
+      display: block;
+    }
+    .slide-lbl {
+      position: absolute;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0,0,0,.52);
+      color: #fff;
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: .7rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .slider-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,.88);
+      border: none;
+      border-radius: 50%;
+      width: 36px; height: 36px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,.2);
+      transition: background .2s;
+    }
+    .slider-btn:hover { background: var(--white); }
+    .slider-btn.prev { right: 10px; }
+    .slider-btn.next { left: 10px; }
+
+    .dots { display: flex; justify-content: center; gap: 8px; margin-top: 16px; }
+    .dot {
+      height: 8px; width: 8px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.3);
+      cursor: pointer;
+      transition: all .3s;
+      border: none; padding: 0;
+    }
+    .dot.on { width: 26px; border-radius: 4px; background: var(--blue); }
+
+    /* PRICE */
+    .price-card {
+      background: var(--white);
+      margin: 14px 14px 0;
+      border-radius: var(--r);
+      padding: 24px 18px;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+    .disc-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: #fef2f2;
+      color: #dc2626;
+      border: 1px solid #fecaca;
+      padding: 5px 14px;
+      border-radius: 50px;
+      font-size: .8rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .price-old {
+      font-size: 2.2rem;
+      color: var(--red);
+      text-decoration: line-through;
+      text-decoration-thickness: 3px;
+      font-weight: 700;
+      opacity: .85;
+      margin-bottom: 4px;
+    }
+    .price-new {
+      font-size: 4.6rem;
+      font-weight: 900;
+      color: var(--blue);
+      line-height: 1;
+      margin-top: 2px;
+    }
+    .price-new sup { font-size: 1.4rem; font-weight: 700; vertical-align: super; }
+    .saving {
+      background: #dcfce7;
+      color: #166534;
+      padding: 5px 14px;
+      border-radius: 50px;
+      font-size: .83rem;
+      font-weight: 700;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    /* FEATURES */
+    .feat-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin: 14px 14px 0;
+    }
+    .feat { background: var(--white); border-radius: var(--r); padding: 18px 12px; box-shadow: var(--shadow); text-align: center; }
+    .feat-ico { font-size: 1.9rem; display: block; margin-bottom: 7px; }
+    .feat-t   { font-size: .88rem; font-weight: 700; color: var(--g900); margin-bottom: 2px; }
+    .feat-d   { font-size: .73rem; color: var(--g500); }
+
+    /* TRUST */
+    .trust {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      margin: 14px 14px 0;
+      background: var(--white);
+      border-radius: var(--r);
+      padding: 16px 12px;
+      box-shadow: var(--shadow);
+      flex-wrap: wrap;
+    }
+    .trust-item { display: flex; flex-direction: column; align-items: center; gap: 5px; font-size: .72rem; color: var(--g700); font-weight: 600; }
+    .trust-item span:first-child { font-size: 1.5rem; }
+
+    /* ORDER FORM */
+    .order-card {
+      background: var(--white);
+      margin: 14px 14px 0;
+      border-radius: var(--r);
+      padding: 24px 18px;
+      box-shadow: var(--shadow);
+    }
+    .sec-title {
+      font-size: 1.35rem; font-weight: 800;
+      text-align: center; margin-bottom: 20px;
+      color: var(--g900);
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+    }
+    .field { margin-bottom: 13px; }
+    .field label { display: block; font-size: .86rem; font-weight: 600; color: var(--g700); margin-bottom: 5px; }
+    .field input,
+    .field select {
+      width: 100%;
+      padding: 13px 14px;
+      border: 2px solid var(--g300);
+      border-radius: 12px;
+      font-size: .93rem;
+      color: var(--g900);
+      background: var(--g50);
+      transition: border-color .2s, box-shadow .2s;
+      font-family: inherit;
+      direction: rtl;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+    .field input:focus,
+    .field select:focus {
+      outline: none;
+      border-color: var(--blue);
+      background: var(--white);
+      box-shadow: 0 0 0 4px rgba(37,99,235,.1);
+    }
+    .field input::placeholder { color: #9ca3af; }
+    .sel-wrap { position: relative; }
+    .sel-wrap::after {
+      content: "▼";
+      position: absolute;
+      left: 13px; top: 50%;
+      transform: translateY(-50%);
+      font-size: .6rem;
+      color: var(--g500);
+      pointer-events: none;
+    }
+
+    .btn-order {
+      width: 100%;
+      padding: 16px;
+      background: linear-gradient(135deg, var(--blue), var(--blue-dk));
+      color: var(--white);
+      border: none;
+      border-radius: 13px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform .2s, box-shadow .2s, opacity .2s;
+      box-shadow: 0 6px 20px rgba(37,99,235,.38);
+      margin-top: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: inherit;
+      animation: pulse 2.5s ease-in-out infinite;
+    }
+    .btn-order:hover  { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(37,99,235,.48); animation: none; }
+    .btn-order:active { transform: translateY(0); }
+    .btn-order:disabled { opacity: .6; cursor: not-allowed; animation: none; }
+
+    .cod-row {
+      text-align: center; margin-top: 12px;
+      display: flex; align-items: center; justify-content: center;
+      gap: 7px; font-size: .85rem; color: var(--g500); flex-wrap: wrap;
+    }
+    .cod-tag { background: #dcfce7; color: #166534; padding: 3px 11px; border-radius: 50px; font-weight: 700; font-size: .82rem; }
+
+    /* CONTACT */
+    .contact-card {
+      background: var(--white);
+      margin: 14px 14px 0;
+      border-radius: var(--r);
+      padding: 24px 18px;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+    .contact-card p { font-size: .95rem; color: var(--g700); margin-bottom: 14px; font-weight: 500; }
+    .btn-wa {
+      display: inline-flex; align-items: center; gap: 9px;
+      padding: 13px 26px;
+      background: linear-gradient(135deg, #25d366, #128c7e);
+      color: var(--white);
+      text-decoration: none;
+      border-radius: 13px;
+      font-size: .95rem; font-weight: 700;
+      transition: transform .2s, box-shadow .2s;
+      box-shadow: 0 6px 20px rgba(37,211,102,.35);
+      font-family: inherit;
+    }
+    .btn-wa:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(37,211,102,.45); }
+
+    .footer {
+      text-align: center; padding: 16px; margin-top: 14px;
+      color: #9ca3af; font-size: .76rem;
+      border-top: 1px solid var(--g100);
+    }
+
+    /* MODAL */
+    .overlay {
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,.6);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      display: flex; align-items: center; justify-content: center;
+      z-index: 999;
+      opacity: 0; visibility: hidden;
+      transition: opacity .3s, visibility .3s;
+      padding: 20px;
+    }
+    .overlay.show { opacity: 1; visibility: visible; }
+    .modal {
+      background: var(--white);
+      border-radius: 22px;
+      padding: 36px 26px 28px;
+      text-align: center;
+      max-width: 310px; width: 100%;
+      transform: scale(.82) translateY(18px);
+      transition: transform .38s cubic-bezier(.34,1.56,.64,1);
+      box-shadow: 0 28px 70px rgba(0,0,0,.3);
+    }
+    .overlay.show .modal { transform: scale(1) translateY(0); }
+    .modal-ico {
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 16px;
+      font-size: 2.5rem;
+    }
+    .modal-ico.ok  { background: #dcfce7; }
+    .modal-ico.err { background: #fef2f2; }
+    .overlay.show .modal-ico { animation: popIn .45s ease .1s both; }
+    .modal h3 { font-size: 1.3rem; font-weight: 800; color: var(--g900); margin-bottom: 8px; }
+    .modal p  { color: var(--g500); font-size: .9rem; line-height: 1.6; }
+    .btn-close {
+      margin-top: 22px;
+      padding: 12px 32px;
+      background: linear-gradient(135deg, var(--blue), var(--blue-dk));
+      color: var(--white);
+      border: none; border-radius: 11px;
+      font-size: .9rem; font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(37,99,235,.28);
+      font-family: inherit;
+      transition: transform .2s;
+    }
+    .btn-close:hover { transform: translateY(-1px); }
+
+    /* SPINNER */
+    .spinner {
+      width: 18px; height: 18px;
+      border: 2.5px solid rgba(255,255,255,.4);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin .7s linear infinite;
+      display: none;
+    }
+    .btn-order.loading .spinner { display: block; }
+    .btn-order.loading .btn-txt { display: none; }
+
+    .field-err { border-color: var(--red) !important; box-shadow: 0 0 0 3px rgba(239,68,68,.14) !important; }
+
+    @keyframes pulse {
+      0%,100% { transform:scale(1);    box-shadow:0 6px 20px rgba(37,99,235,.38); }
+      50%      { transform:scale(1.02); box-shadow:0 8px 26px rgba(37,99,235,.55); }
+    }
+    @keyframes popIn {
+      0%   { transform:scale(0); }
+      70%  { transform:scale(1.16); }
+      100% { transform:scale(1); }
+    }
+    @keyframes spin { to { transform:rotate(360deg); } }
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <div class="brand">⚡ <em>Anker</em> Store Algeria</div>
+</header>
+
+<div class="wrap">
+
+  <!-- HERO + SLIDER -->
+  <section class="hero">
+    <div class="badge">🔥 عرض حصري محدود الكمية</div>
+    <h1>Anker 20W<br>Type-C Charger</h1>
+    <p>الشاحن الأسرع والأكثر أماناً لهاتفك الذكي</p>
+
+    <div class="slider-wrap">
+      <div class="slider-track" id="track">
+
+        <div class="slide slide-1">
+          <img src="images/product-1.webp" alt="Anker 20W شاحن أصلي" loading="eager">
+          <div class="slide-lbl">منتج أصلي 100%</div>
+        </div>
+
+        <div class="slide slide-2">
+          <img src="images/product-2.webp" alt="Anker 20W شحن سريع" loading="lazy">
+          <div class="slide-lbl">شحن 20 واط فائق السرعة</div>
+        </div>
+
+        <div class="slide slide-3">
+          <img src="images/product-3.webp" alt="Anker 20W تصميم عصري" loading="lazy">
+          <div class="slide-lbl">تصميم مدمج وعصري</div>
+        </div>
+
+      </div>
+      <button class="slider-btn prev" onclick="move(-1)" aria-label="السابق">&#8249;</button>
+      <button class="slider-btn next" onclick="move(1)"  aria-label="التالي">&#8250;</button>
+    </div>
+
+    <div class="dots" id="dots">
+      <button class="dot on" onclick="go(0)" aria-label="صورة 1"></button>
+      <button class="dot"    onclick="go(1)" aria-label="صورة 2"></button>
+      <button class="dot"    onclick="go(2)" aria-label="صورة 3"></button>
+    </div>
+  </section>
+
+  <!-- PRICE -->
+  <div class="price-card">
+    <div class="disc-badge">🔥 تخفيض 45%</div>
+    <div class="price-old">DA 5,500</div>
+    <div class="price-new"><sup>DA</sup> 3,500</div>
+    <div class="saving">💰 وفّرت 2,000 دج</div>
+  </div>
+
+  <!-- FEATURES -->
+  <div class="feat-grid">
+    <div class="feat">
+      <span class="feat-ico">⚡</span>
+      <div class="feat-t">شحن 20W</div>
+      <div class="feat-d">PowerIQ 3.0</div>
+    </div>
+    <div class="feat">
+      <span class="feat-ico">🛡️</span>
+      <div class="feat-t">حماية تامة</div>
+      <div class="feat-d">MultiProtect</div>
+    </div>
+    <div class="feat">
+      <span class="feat-ico">📱</span>
+      <div class="feat-t">متوافق للكل</div>
+      <div class="feat-d">iOS & Android</div>
+    </div>
+    <div class="feat">
+      <span class="feat-ico">✅</span>
+      <div class="feat-t">ضمان أصلي</div>
+      <div class="feat-d">12 شهر</div>
+    </div>
+  </div>
+
+  <!-- TRUST -->
+  <div class="trust">
+    <div class="trust-item"><span>🚚</span><span>توصيل لكل الولايات</span></div>
+    <div class="trust-item"><span>💳</span><span>الدفع عند الاستلام</span></div>
+    <div class="trust-item"><span>🔄</span><span>إرجاع مجاني 7 أيام</span></div>
+    <div class="trust-item"><span>📦</span><span>تغليف محكم</span></div>
+  </div>
+
+  <!-- ORDER FORM -->
+  <div class="order-card">
+    <h2 class="sec-title">🛒 اطلب الآن</h2>
+
+    <form id="orderForm" novalidate>
+
+      <div class="field">
+        <label for="fullName">الاسم الكامل *</label>
+        <input type="text" id="fullName" name="fullName" placeholder="مثال: أحمد بن علي" autocomplete="name">
+      </div>
+
+      <div class="field">
+        <label for="phone">رقم الهاتف *</label>
+        <input type="tel" id="phone" name="phone" placeholder="0XXXXXXXXX" autocomplete="tel">
+      </div>
+
+      <div class="field">
+        <label for="wilaya">الولاية *</label>
+        <div class="sel-wrap">
+          <select id="wilaya" name="wilaya">
+            <option value="">— اختر الولاية —</option>
+            <option>01 - أدرار</option>
+            <option>02 - الشلف</option>
+            <option>03 - الأغواط</option>
+            <option>04 - أم البواقي</option>
+            <option>05 - باتنة</option>
+            <option>06 - بجاية</option>
+            <option>07 - بسكرة</option>
+            <option>08 - بشار</option>
+            <option>09 - البليدة</option>
+            <option>10 - البويرة</option>
+            <option>11 - تمنراست</option>
+            <option>12 - تبسة</option>
+            <option>13 - تلمسان</option>
+            <option>14 - تيارت</option>
+            <option>15 - تيزي وزو</option>
+            <option>16 - الجزائر العاصمة</option>
+            <option>17 - الجلفة</option>
+            <option>18 - جيجل</option>
+            <option>19 - سطيف</option>
+            <option>20 - سعيدة</option>
+            <option>21 - سكيكدة</option>
+            <option>22 - سيدي بلعباس</option>
+            <option>23 - عنابة</option>
+            <option>24 - قالمة</option>
+            <option>25 - قسنطينة</option>
+            <option>26 - المدية</option>
+            <option>27 - مستغانم</option>
+            <option>28 - المسيلة</option>
+            <option>29 - معسكر</option>
+            <option>30 - ورقلة</option>
+            <option>31 - وهران</option>
+            <option>32 - البيض</option>
+            <option>33 - إليزي</option>
+            <option>34 - برج بوعريريج</option>
+            <option>35 - بومرداس</option>
+            <option>36 - الطارف</option>
+            <option>37 - تندوف</option>
+            <option>38 - تيسمسيلت</option>
+            <option>39 - الوادي</option>
+            <option>40 - خنشلة</option>
+            <option>41 - سوق أهراس</option>
+            <option>42 - تيبازة</option>
+            <option>43 - ميلة</option>
+            <option>44 - عين الدفلى</option>
+            <option>45 - النعامة</option>
+            <option>46 - عين تموشنت</option>
+            <option>47 - غرداية</option>
+            <option>48 - غليزان</option>
+            <option>49 - تيميمون</option>
+            <option>50 - برج باجي مختار</option>
+            <option>51 - أولاد جلال</option>
+            <option>52 - بني عباس</option>
+            <option>53 - عين صالح</option>
+            <option>54 - عين قزام</option>
+            <option>55 - تقرت</option>
+            <option>56 - جانت</option>
+            <option>57 - المغير</option>
+            <option>58 - المنيعة</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="commune">البلدية *</label>
+        <input type="text" id="commune" name="commune" placeholder="مثال: باب الوادي">
+      </div>
+
+      <button type="submit" class="btn-order" id="submitBtn">
+        <span class="btn-txt">🛒 اطلب الآن — 3,500 DA</span>
+        <div class="spinner"></div>
+      </button>
+
+      <div class="cod-row">
+        <span>💳</span>
+        <span class="cod-tag">الدفع عند الاستلام</span>
+        <span>متاح في كل الولايات</span>
+      </div>
+    </form>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="contact-card">
+    <p>💬 لديك استفسار؟ تواصل معنا مباشرة</p>
+    <a href="https://wa.me/213784341048" class="btn-wa" target="_blank" rel="noopener noreferrer">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+      تواصل عبر واتساب
+    </a>
+  </div>
+
+  <footer class="footer">
+    <p>© 2025 Anker Store Algeria — جميع الحقوق محفوظة</p>
+  </footer>
+
+</div>
+
+<!-- SUCCESS MODAL -->
+<div class="overlay" id="modalOk" role="dialog" aria-modal="true" aria-labelledby="modalOkTitle">
+  <div class="modal">
+    <div class="modal-ico ok">✅</div>
+    <h3 id="modalOkTitle">تم استلام طلبك!</h3>
+    <p>سنتواصل معك قريباً لتأكيد الطلب وتحديد موعد التوصيل إلى بابك 🚚</p>
+    <button class="btn-close" onclick="closeModal('modalOk')">شكراً، حسناً!</button>
+  </div>
+</div>
+
+<!-- ERROR MODAL -->
+<div class="overlay" id="modalErr" role="dialog" aria-modal="true">
+  <div class="modal">
+    <div class="modal-ico err">⚠️</div>
+    <h3>حدث خطأ</h3>
+    <p>لم يتم إرسال طلبك. يرجى المحاولة مرة أخرى أو التواصل عبر واتساب.</p>
+    <button class="btn-close" onclick="closeModal('modalErr')">حسناً</button>
+  </div>
+</div>
+
+<script>
+  /* SLIDER */
+  let cur = 0;
+  const TOTAL = 3;
+  let timer;
+
+  function go(n) {
+    cur = (n + TOTAL) % TOTAL;
+    document.getElementById('track').style.transform = 'translateX(-' + (cur * 100) + '%)';
+    document.querySelectorAll('.dot').forEach(function(d, i) { d.classList.toggle('on', i === cur); });
+  }
+
+  function move(dir) { stopAuto(); go(cur + dir); startAuto(); }
+  function startAuto() { timer = setInterval(function() { go(cur + 1); }, 3200); }
+  function stopAuto()  { clearInterval(timer); }
+
+  var track = document.getElementById('track');
+  var tx = 0;
+  track.addEventListener('touchstart', function(e) { tx = e.touches[0].clientX; stopAuto(); }, { passive: true });
+  track.addEventListener('touchend',   function(e) {
+    var diff = tx - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) move(diff > 0 ? 1 : -1);
+    startAuto();
+  }, { passive: true });
+
+  startAuto();
+
+  /* FORM */
+  document.getElementById('orderForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    var fName    = document.getElementById('fullName');
+    var fPhone   = document.getElementById('phone');
+    var fWilaya  = document.getElementById('wilaya');
+    var fCommune = document.getElementById('commune');
+
+    var ok = true;
+    [
+      { el: fName,    v: fName.value.trim() },
+      { el: fPhone,   v: fPhone.value.trim() },
+      { el: fWilaya,  v: fWilaya.value },
+      { el: fCommune, v: fCommune.value.trim() },
+    ].forEach(function(f) {
+      if (!f.v) {
+        ok = false;
+        f.el.classList.add('field-err');
+        f.el.addEventListener('input',  function() { f.el.classList.remove('field-err'); }, { once: true });
+        f.el.addEventListener('change', function() { f.el.classList.remove('field-err'); }, { once: true });
+      }
+    });
+    if (!ok) return;
+
+    var btn = document.getElementById('submitBtn');
+    btn.disabled = true;
+    btn.classList.add('loading');
+
+    try {
+      var res = await fetch('/api/order', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          fullName: fName.value.trim(),
+          phone:    fPhone.value.trim(),
+          wilaya:   fWilaya.value,
+          commune:  fCommune.value.trim(),
+        }),
+      });
+
+      if (res.ok) {
+        this.reset();
+        openModal('modalOk');
+      } else {
+        openModal('modalErr');
+      }
+    } catch(err) {
+      openModal('modalErr');
+    } finally {
+      btn.disabled = false;
+      btn.classList.remove('loading');
+    }
+  });
+
+  /* MODAL */
+  function openModal(id)  { document.getElementById(id).classList.add('show'); }
+  function closeModal(id) { document.getElementById(id).classList.remove('show'); }
+
+  document.querySelectorAll('.overlay').forEach(function(o) {
+    o.addEventListener('click', function(e) { if (e.target === o) o.classList.remove('show'); });
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') document.querySelectorAll('.overlay.show').forEach(function(o) { o.classList.remove('show'); });
+  });
+</script>
+</body>
+</html>

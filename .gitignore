@@ -1,0 +1,11 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Vercel
+.vercel
+
+# Junk files in images
+images/*.html
+images/*.svg
+images/*_files/
